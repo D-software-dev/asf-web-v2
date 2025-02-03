@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import formsPlugin from "@tailwindcss/forms";
 
 export default {
   content: [
@@ -11,8 +12,16 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "#2B8500",
+        secondary: "#4CAF50",
+        accent: "#8BC34A",
+      },
+      fontFamily: {
+        righteous: ["var(--font-righteous)"],
+        "rozha-one": ["var(--font-rozha-one)"],
+        montserrat: ["var(--font-montserrat)"],
       },
     },
   },
-  plugins: [],
+  plugins: [formsPlugin],
 } satisfies Config;
