@@ -53,7 +53,7 @@ function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-b from-white via-gray-50/50 to-white overflow-hidden pt-24 lg:pt-0">
+    <section className="relative min-h-screen items-center bg-gradient-to-b from-white via-gray-50/50 to-white overflow-hidden pt-24 lg:pt-0">
       {/* Background Elements */}
       <div className="absolute inset-0">
         {/* Circuit-like pattern */}
@@ -71,7 +71,7 @@ export default function Hero() {
       </div>
 
       {/* Main Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative py-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left side - Text content */}
           <motion.div
@@ -219,7 +219,7 @@ export default function Hero() {
       </div>
 
       {/* Stats Section */}
-      <div className="absolute bottom-0 left-0 right-0">
+      <div className="block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
