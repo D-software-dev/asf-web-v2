@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Link from "next/link";
-import { HandHeart, Menu, X, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { HandHeart, Menu, X, Phone, Mail, MapPin, Clock, DivideCircleIcon } from "lucide-react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { montserrat, rozhaOne } from "@/constants/Fonts";
+import Button from "./Button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,7 @@ const Navbar = () => {
     {
       title: "About Us",
       links: [
-        { href: "/about", label: "Our Story" },
+        { href: "/about-us", label: "Our Story" },
         { href: "/team", label: "Leadership" },
         { href: "/beliefs", label: "Our Beliefs" },
       ],
@@ -60,9 +61,9 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="fixed w-full z-50">
+    <header className="fixed top-0 w-full z-50">
       {/* Main Navbar */}
-      <nav className="bg-white/80 backdrop-blur-xl shadow-sm border-b border-gray-100">
+      <nav className="bg-white/80 dark:bg-[rgba(23,37,30,0.87)] dark:border-none backdrop-blur-xl shadow-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             {/* Logo Section */}
@@ -105,9 +106,9 @@ const Navbar = () => {
               {mainNavLinks.map((link) => (
                 <Link
                   key={link.href}
-                  href={link.href}
+                  href={`/#${link.href.replace("/", "")}`}  
                   style={{ fontFamily: montserrat.style.fontFamily }}
-                  className="text-gray-700 px-3 py-2 text-base font-medium 
+                  className="text-gray-700 dark:text-gray-300 px-3 py-2 text-base font-medium 
                     relative group"
                 >
                   <span className="relative z-10">{link.label}</span>
@@ -119,6 +120,7 @@ const Navbar = () => {
                 </Link>
               ))}
             </div>
+              
 
             {/* Desktop Action Buttons */}
             <div className="hidden md:flex items-center gap-4">
@@ -133,9 +135,12 @@ const Navbar = () => {
                 Donate
                 <HandHeart size={20} />
               </Link>
+              <Button btnCss="p-3 rounded-xl dark:text-gray-300 text-gray-700 hover:text-primary 
+                  hover:bg-primary/5 transition-all duration-300 
+                  transform hover:scale-110"/>
               <button
                 onClick={() => setIsOpen(true)}
-                className="p-3 rounded-xl text-gray-700 hover:text-primary 
+                className="p-3 rounded-xl dark:text-gray-300 text-gray-700 hover:text-primary 
                   hover:bg-primary/5 transition-all duration-300 
                   transform hover:scale-110"
               >
@@ -144,13 +149,17 @@ const Navbar = () => {
             </div>
 
             {/* Mobile menu button */}
-            <button
-              onClick={() => setIsOpen(true)}
-              className="md:hidden p-2 rounded-xl text-gray-700 hover:text-primary 
-                hover:bg-primary/5 transition-all duration-300"
-            >
-              <Menu size={28} />
-            </button>
+            <div className="flex md:hidden items-center">
+              <Button btnCss="md:hidden p-2 rounded-xl dark:text-gray-300 text-gray-700 hover:text-primary 
+                  hover:bg-primary/5 transition-all duration-300"/>
+              <button
+                onClick={() => setIsOpen(true)}
+                className="md:hidden p-2 rounded-xl dark:text-gray-300 text-gray-700 hover:text-primary 
+                  hover:bg-primary/5 transition-all duration-300"
+              >
+                <Menu size={28} />
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -162,14 +171,14 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-white z-50 overflow-y-auto"
+            className="fixed inset-0 bg-white dark:bg-[#121212] z-50 custom-scrollbar overflow-y-auto"
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
               {/* Close button */}
               <div className="flex justify-end mb-8">
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-3 rounded-xl text-gray-700 hover:text-primary 
+                  className="p-3 rounded-xl text-gray-700 dark:text-gray-200 hover:text-primary 
                     hover:bg-primary/5 transition-all duration-300 
                     transform hover:scale-110"
                 >
@@ -193,7 +202,7 @@ const Navbar = () => {
                   <div
                     key={index}
                     className="flex items-center gap-4 p-4 
-                    rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors 
+                    rounded-xl bg-gray-50 dark:bg-[#080808fd] hover:bg-gray-100 dark:hover:bg-[#080808fd]/50 transition-colors 
                     duration-300"
                   >
                     <div className="p-3 rounded-lg bg-primary/10 text-primary">
@@ -201,7 +210,7 @@ const Navbar = () => {
                     </div>
                     <span
                       style={{ fontFamily: montserrat.style.fontFamily }}
-                      className="text-gray-600"
+                      className="text-gray-600 dark:text-gray-400"
                     >
                       {item.text}
                     </span>
@@ -231,7 +240,7 @@ const Navbar = () => {
                             href={link.href}
                             onClick={() => setIsOpen(false)}
                             style={{ fontFamily: montserrat.style.fontFamily }}
-                            className="text-gray-600 hover:text-primary block py-2 
+                            className="text-gray-600 dark:text-gray-400 hover:text-primary block py-2 
                               text-lg transition-all duration-300 hover:translate-x-2 
                               relative group"
                           >

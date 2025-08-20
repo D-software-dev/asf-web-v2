@@ -2,19 +2,23 @@ import Link from "next/link";
 import {
   Facebook,
   Instagram,
-  Twitter,
+  // Twitter, // Uncomment if you want to include Twitter
   Youtube,
   Mail,
   MapPin,
   Phone,
 } from "lucide-react";
 import { righteous, montserrat, rozhaOne } from "@/constants/Fonts";
+import TiktokIcon from "./icons/TiktokIcon";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-gray-950 text-white">
+    <footer
+      id="contact"
+      className="bg-gradient-to-b from-gray-900 to-gray-950 text-white"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16">
@@ -35,28 +39,39 @@ const Footer = () => {
               </p>
               <div className="flex items-center space-x-4">
                 <a
-                  href="#"
+                  href="https://web.facebook.com/search/posts/?q=asf%20uniport"
+                  target="_blank"
                   className="p-2 rounded-full bg-white/10 hover:bg-primary/90 
                   text-white transition-colors duration-300"
                 >
                   <Facebook size={20} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/asfuniport/"
+                  target="_blank"
                   className="p-2 rounded-full bg-white/10 hover:bg-primary/90 
                   text-white transition-colors duration-300"
                 >
                   <Instagram size={20} />
                 </a>
-                <a
+                {/* <a
                   href="#"
                   className="p-2 rounded-full bg-white/10 hover:bg-primary/90 
                   text-white transition-colors duration-300"
                 >
                   <Twitter size={20} />
+                </a> */}
+                <a
+                  href="https://www.tiktok.com/search?q=asf%20uniport&t=1748463774533"
+                  target="_blank"
+                  className="p-2 rounded-full bg-white/10 hover:bg-primary/90 
+                  text-white transition-colors duration-300"
+                >
+                  <TiktokIcon size={20} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.youtube.com/results?search_query=asf+uniport"
+                  target="_blank"
                   className="p-2 rounded-full bg-white/10 hover:bg-primary/90 
                   text-white transition-colors duration-300"
                 >
@@ -77,7 +92,11 @@ const Footer = () => {
                   (item) => (
                     <li key={item}>
                       <Link
-                        href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                        href={
+                          item == "What We Do"
+                            ? `/#${item.toLowerCase().replace(/\s+/g, "-")}`
+                            : `/${item.toLowerCase().replace(/\s+/g, "-")}`
+                        }
                         className="text-gray-300 hover:text-primary transition-colors duration-300 
                         flex items-center group"
                       >

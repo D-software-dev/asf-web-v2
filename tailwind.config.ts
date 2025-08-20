@@ -7,12 +7,14 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "#2B8500",
+        pDark: "#58a337",
         secondary: "#4CAF50",
         accent: "#8BC34A",
       },
@@ -23,5 +25,5 @@ export default {
       },
     },
   },
-  plugins: [formsPlugin],
+  plugins: [formsPlugin], 
 } satisfies Config;
