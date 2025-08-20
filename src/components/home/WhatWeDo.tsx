@@ -1,8 +1,9 @@
-import { motion } from "framer-motion";
+import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import Image from "next/image";
 import { righteous, montserrat, rozhaOne } from "@/constants/Fonts";
 import { Clock, MapPin, Users, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const activities = [
   {
@@ -73,13 +74,14 @@ const activities = [
 
 const WhatWeDo = () => {
   return (
-    <section className="py-24 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="what-we-do" className="py-24 bg-white dark:bg-[#121212] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.5 }}
+          onViewportEnter={(entry) => { console.log("Just entered", entry?.isIntersecting) }}
           className="text-center mb-20"
         >
           <h2
@@ -88,7 +90,7 @@ const WhatWeDo = () => {
             Life at ASF UniPort
           </h2>
           <p
-            className={`${montserrat.className} text-gray-600 max-w-3xl mx-auto text-lg`}
+            className={`${montserrat.className} text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg`}
           >
             Experience a vibrant community where faith, fellowship, and
             friendship come together to create unforgettable moments and lasting
@@ -102,7 +104,7 @@ const WhatWeDo = () => {
               key={activity.id}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={activity.id !== 1 ? ({ once: true, margin: "-100px" }) : ({ once: true })}
               transition={{ duration: 0.7 }}
               className="relative"
             >
@@ -121,33 +123,33 @@ const WhatWeDo = () => {
                   >
                     <h3
                       className={`${righteous.className} text-4xl sm:text-5xl font-bold 
-                      text-gray-900`}
+                      text-gray-900 dark:text-gray-100`}
                     >
                       {activity.title}
                     </h3>
 
                     <p
-                      className={`${montserrat.className} text-xl text-gray-600 leading-relaxed`}
+                      className={`${montserrat.className} text-xl text-gray-700 dark:text-gray-300 leading-relaxed`}
                     >
                       {activity.description}
                     </p>
 
                     <div className="flex flex-wrap gap-6">
                       <div className="flex items-center gap-2 text-gray-600">
-                        <Clock className="w-5 h-5 text-primary" />
-                        <span className={`${montserrat.className} text-sm`}>
+                        <Clock className="w-5 h-5 text-primary dark:text-pDark" />
+                        <span className={`${montserrat.className} text-sm text-gray-800 dark:text-gray-400`}>
                           {activity.time}
                         </span>
                       </div>
                       <div className="flex items-center gap-2 text-gray-600">
-                        <MapPin className="w-5 h-5 text-primary" />
-                        <span className={`${montserrat.className} text-sm`}>
+                        <MapPin className="w-5 h-5 text-primary dark:text-pDark" />
+                        <span className={`${montserrat.className} text-sm text-gray-800 dark:text-gray-400`}>
                           {activity.location}
                         </span>
                       </div>
                       <div className="flex items-center gap-2 text-gray-600">
-                        <Users className="w-5 h-5 text-primary" />
-                        <span className={`${montserrat.className} text-sm`}>
+                        <Users className="w-5 h-5 text-primary dark:text-pDark" />
+                        <span className={`${montserrat.className} text-sm text-gray-800 dark:text-gray-400`}>
                           {activity.attendance}
                         </span>
                       </div>
@@ -156,7 +158,7 @@ const WhatWeDo = () => {
                     <Link
                       href={`/activities/${activity.id}`}
                       className={`${montserrat.className} inline-flex items-center gap-2 
-                        text-primary font-medium hover:gap-4 transition-all duration-300`}
+                        text-primary dark:text-pDark font-medium hover:gap-4 transition-all duration-300`}
                     >
                       Learn More <ArrowRight className="w-5 h-5" />
                     </Link>
@@ -178,7 +180,7 @@ const WhatWeDo = () => {
                         src={activity.image}
                         alt={activity.title}
                         fill
-                        className="object-cover transition-transform duration-700 hover:scale-110"
+                        className="object-cover grayscale-[40%] transition-transform duration-700 hover:scale-110"
                       />
                     </div>
 
@@ -208,7 +210,7 @@ const WhatWeDo = () => {
                               src={img}
                               alt={`${activity.title} ${imgIndex + 1}`}
                               fill
-                              className="object-cover"
+                              className="object-cover grayscale-[40%]"
                             />
                           </motion.div>
                         ))}

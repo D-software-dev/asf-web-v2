@@ -30,7 +30,7 @@ const featuredEvents = [
 
 const Events = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-gray-50/50">
+    <section className="py-24 bg-gradient-to-b from-white dark:from-[#1c1d1c] to-gray-50/50 dark:to-[#121212] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -46,7 +46,7 @@ const Events = () => {
             Featured Events
           </h2>
           <p
-            className={`${montserrat.className} text-gray-600 max-w-3xl mx-auto text-lg`}
+            className={`${montserrat.className} text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg`}
           >
             Relive some of our most impactful moments and celebrations of faith.
           </p>

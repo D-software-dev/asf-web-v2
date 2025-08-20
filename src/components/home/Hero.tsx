@@ -55,10 +55,10 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen items-center bg-gradient-to-b from-white via-gray-50/50 to-white overflow-hidden pt-24 lg:pt-0">
       {/* Background Elements */}
-      <div className="absolute inset-0">
+      <div className="dark:bg-gradient-to-bl dark:from-[#0e170d] dark:to-[#010104] absolute inset-0">
         {/* Circuit-like pattern */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="dark:hidden absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20h80v80H20V20zm20 20h40v40H40V40z' fill='none' stroke='%23333' stroke-width='2'/%3E%3Cpath d='M0 0l20 20m80 0L120 0M0 120l20-20m80 0l20 20' stroke='%23333' stroke-width='2'/%3E%3C/svg%3E")`,
             backgroundSize: "60px 60px",
@@ -66,8 +66,8 @@ export default function Hero() {
         />
 
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-transparent to-white/40" />
+        <div className="dark:hidden absolute inset-0-gradient-to-r from-white via-white/95 to-white/60" />
+        <div className="dark:hidden absolute inset-0 bg-gradient-to-b from-white/0 via-transparent to-white/40" />
       </div>
 
       {/* Main Content */}
@@ -101,11 +101,11 @@ export default function Hero() {
                   className={`${rozhaOne.className} text-5xl sm:text-6xl lg:text-7xl 
                   xl:text-8xl font-bold tracking-tight`}
                 >
-                  <span className="text-gray-900">Your family</span>
+                  <span className="dark:text-[#dbe3f0] text-gray-900">Your family</span>
                   <span className="block text-primary mt-2">on Campus</span>
                 </h1>
                 <p
-                  className={`${montserrat.className} text-lg sm:text-xl text-gray-600 
+                  className={`${montserrat.className} text-lg sm:text-xl text-gray-600 dark:text-gray-400 
                   max-w-xl mx-auto lg:mx-0`}
                 >
                   Join a vibrant community of faith, fellowship, and spiritual
@@ -164,7 +164,7 @@ export default function Hero() {
                   src="/images/hero-1.jpg"
                   alt="ASF Community"
                   fill
-                  className="object-cover"
+                  className="object-cover grayscale-[40%]"
                   priority
                 />
                 <div
@@ -185,7 +185,7 @@ export default function Hero() {
                   src="/images/hero-2.jpg"
                   alt="ASF Event"
                   fill
-                  className="object-cover"
+                  className="object-cover grayscale-[40%]"
                 />
               </motion.div>
 
@@ -200,7 +200,7 @@ export default function Hero() {
                   src="/images/hero-3.jpg"
                   alt="ASF Worship"
                   fill
-                  className="object-cover"
+                  className="object-cover grayscale-[40%]"
                 />
               </motion.div>
 
@@ -238,7 +238,7 @@ export default function Hero() {
                 <div className="space-y-2">
                   <h3
                     className={`${rozhaOne.className} text-5xl font-bold 
-                    bg-gradient-to-b from-gray-900 to-gray-600 bg-clip-text 
+                    bg-gradient-to-b dark:from-gray-700 from-gray-900 to-gray-600 dark:to-gray-400 bg-clip-text 
                     text-transparent group-hover:from-primary group-hover:to-primary/80 
                     transition-all duration-300`}
                   >
@@ -247,7 +247,7 @@ export default function Hero() {
 
                   <p
                     className={`${montserrat.className} text-sm font-medium 
-                    text-gray-500 uppercase tracking-wider`}
+                    text-gray-500 dark:text-gray-300 uppercase tracking-wider`}
                   >
                     {stat.name}
                   </p>

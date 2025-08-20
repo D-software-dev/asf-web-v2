@@ -12,6 +12,23 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+
+/* Add this to ensure dark scrollbar on dark mode */
+
+    .custom-scrollbar::-webkit-scrollbar {
+    width: clamp(2px, 2vw, 10px);
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(43, 133, 0, 0.61);
+    transition: background-color 2s linear;
+    border-radius: 1000px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(43, 133, 0, 1);
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background-color: rgba(43, 133, 0, 0.2);
+  }
 }
 
 body {
@@ -27,6 +44,7 @@ html, body {
   overflow-x: hidden;
   position: relative;
   width: 100%;
+  scroll-behavior: smooth;
 }
 
 /* Ensure main content container doesn't overflow */

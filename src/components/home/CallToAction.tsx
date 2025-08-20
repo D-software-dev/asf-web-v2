@@ -29,14 +29,14 @@ const meetingTimes = [
 
 const CallToAction = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-primary/5 via-white to-accent/5">
+    <section className="py-24 bg-gradient-to-br dark:bg-gradient-to-br from-primary/5 dark:from-[#121212f6] via-white dark:via-[#121212] to-accent/5 dark:to-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative">
           {/* Content Container */}
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden dark:shadow-lg dark:shadow-[#141812] dark:bg-[#121212]">
             <div className="grid lg:grid-cols-2">
               {/* Left Side - Meeting Times */}
-              <div className="p-8 sm:p-12 bg-gradient-to-br from-primary/10 to-transparent">
+              <div className="p-8 sm:p-12 dark:from-[rgb(32,32,32)] dark:to-[rgb(3,3,3)] bg-gradient-to-br from-primary/10 to-transparent">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ const CallToAction = () => {
                     Join Us in Fellowship
                   </h2>
                   <p
-                    className={`${montserrat.className} text-lg text-gray-600`}
+                    className={`${montserrat.className} text-lg text-gray-600m dark:text-gray-400`}
                   >
                     Experience the joy of worship and community as we grow
                     together in faith.
@@ -67,9 +67,9 @@ const CallToAction = () => {
                         className="group"
                       >
                         <div
-                          className="bg-white rounded-xl p-6 shadow-sm 
+                          className="bg-white dark:bg-[rgba(3,3,3,0.4)] rounded-xl p-6 shadow-sm 
                           hover:shadow-md transition-all duration-300 
-                          border border-gray-100 hover:border-primary/20"
+                          border border-[rgba(59,59,59,.4)] hover:border-primary/20"
                         >
                           <div className="flex items-start gap-4">
                             <div className="p-3 rounded-lg bg-primary/10 text-primary">
@@ -79,7 +79,7 @@ const CallToAction = () => {
                               <div className="flex items-center gap-2">
                                 <h3
                                   className={`${righteous.className} text-xl font-bold 
-                                  text-gray-900`}
+                                  text-gray-900 dark:text-gray-400`}
                                 >
                                   {meeting.type}
                                 </h3>
@@ -90,14 +90,14 @@ const CallToAction = () => {
                                   {meeting.day}
                                 </span>
                               </div>
-                              <div className="flex items-center gap-2 text-gray-600">
+                              <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                                 <Clock className="w-4 h-4" />
                                 <span className={`${montserrat.className}`}>
                                   {meeting.time}
                                 </span>
                               </div>
                               <p
-                                className={`${montserrat.className} text-gray-600`}
+                                className={`${montserrat.className} text-gray-600 dark:text-gray-400`}
                               >
                                 {meeting.description}
                               </p>
@@ -111,7 +111,7 @@ const CallToAction = () => {
               </div>
 
               {/* Right Side - CTA */}
-              <div className="p-8 sm:p-12 flex flex-col justify-center bg-gradient-to-br from-gray-50 to-white">
+              <div className="p-8 sm:p-12 flex flex-col justify-center bg-gradient-to-br from-gray-50 to-white dark:bg-gradient-to-br dark:from-[#151a15] dark:to-[#0c0909]">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -127,12 +127,12 @@ const CallToAction = () => {
                       Main Auditorium, UniPort
                     </div>
                     <h3
-                      className={`${righteous.className} text-3xl font-bold text-gray-900`}
+                      className={`${righteous.className} text-3xl font-bold text-gray-900 dark:text-gray-300`}
                     >
                       Ready to Join Us?
                     </h3>
                     <p
-                      className={`${montserrat.className} text-lg text-gray-600`}
+                      className={`${montserrat.className} text-lg text-gray-600 dark:text-gray-400`}
                     >
                       Take the first step towards a vibrant faith community. We
                       can&apos;t wait to welcome you!

@@ -17,11 +17,11 @@ const AskQuestion = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-white via-gray-50/50 to-white">
+    <section className="py-24 bg-gradient-to-br from-white dark:from-[#121212] via-gray-50/50 to-white dark:to-[#121212]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative">
           {/* Content Container */}
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+          <div className="bg-white dark:bg-[rgba(14,31,22,0.5)] rounded-3xl shadow-xl overflow-hidden">
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Left Side - Form */}
               <div className="p-8 sm:p-12">
@@ -37,7 +37,7 @@ const AskQuestion = () => {
                     Ask a Question
                   </h2>
                   <p
-                    className={`${montserrat.className} text-lg text-gray-600`}
+                    className={`${montserrat.className} text-lg text-gray-600 dark:text-gray-400`}
                   >
                     Have questions about our fellowship or the Adventist faith?
                     We&apos;re here to help and guide you.
@@ -49,7 +49,7 @@ const AskQuestion = () => {
                       <label
                         htmlFor="name"
                         className={`${montserrat.className} block text-sm 
-                        font-medium text-gray-700 mb-2`}
+                        font-medium text-gray-700 dark:text-gray-300 mb-2`}
                       >
                         Your Name
                       </label>
@@ -68,8 +68,8 @@ const AskQuestion = () => {
                             setFormData({ ...formData, name: e.target.value })
                           }
                           className={`${montserrat.className} block w-full pl-11 pr-4 py-3 
-                            border-gray-200 rounded-xl focus:ring-primary focus:border-primary
-                            bg-gray-50/50 hover:bg-gray-50 transition-colors duration-200`}
+                            border-gray-200 dark:text-white dark:border-gray-600/70 rounded-xl focus:ring-primary focus:border-primary
+                            bg-gray-50/50 dark:bg-[rgba(8,17,12,0.5)] hover:bg-gray-50 dark:hover:bg-transparent transition-colors duration-200`}
                           required
                           placeholder="John Doe"
                         />
@@ -81,7 +81,7 @@ const AskQuestion = () => {
                       <label
                         htmlFor="email"
                         className={`${montserrat.className} block text-sm 
-                        font-medium text-gray-700 mb-2`}
+                        font-medium text-gray-700 dark:text-gray-300 mb-2`}
                       >
                         Email Address
                       </label>
@@ -100,8 +100,8 @@ const AskQuestion = () => {
                             setFormData({ ...formData, email: e.target.value })
                           }
                           className={`${montserrat.className} block w-full pl-11 pr-4 py-3 
-                            border-gray-200 rounded-xl focus:ring-primary focus:border-primary
-                            bg-gray-50/50 hover:bg-gray-50 transition-colors duration-200`}
+                            border-gray-200 dark:text-white dark:border-gray-600/70 rounded-xl focus:ring-primary focus:border-primary
+                            bg-gray-50/50 dark:bg-[rgba(8,17,12,0.5)] hover:bg-gray-50 dark:hover:bg-transparent transition-colors duration-200`}
                           required
                           placeholder="john@example.com"
                         />
@@ -113,7 +113,7 @@ const AskQuestion = () => {
                       <label
                         htmlFor="question"
                         className={`${montserrat.className} block text-sm 
-                        font-medium text-gray-700 mb-2`}
+                        font-medium text-gray-700 dark:text-gray-300 mb-2`}
                       >
                         Your Question
                       </label>
@@ -132,8 +132,8 @@ const AskQuestion = () => {
                             })
                           }
                           className={`${montserrat.className} block w-full pl-11 pr-4 py-3 
-                            border-gray-200 rounded-xl focus:ring-primary focus:border-primary
-                            bg-gray-50/50 hover:bg-gray-50 transition-colors duration-200`}
+                            border-gray-200 dark:text-white dark:border-gray-600/70 rounded-xl focus:ring-primary focus:border-primary
+                            bg-gray-50/50 dark:bg-[rgba(8,17,12,0.5)] hover:bg-gray-50 dark:hover:bg-transparent transition-colors duration-200`}
                           required
                           placeholder="Type your question here..."
                         />
@@ -170,12 +170,12 @@ const AskQuestion = () => {
                       <MessageSquare className="w-10 h-10 text-primary" />
                     </div>
                     <h3
-                      className={`${righteous.className} text-3xl font-bold text-gray-900`}
+                      className={`${righteous.className} text-3xl font-bold text-gray-900 dark:text-gray-200`}
                     >
                       We&apos;re Here to Help
                     </h3>
                     <p
-                      className={`${montserrat.className} text-lg text-gray-600 max-w-md`}
+                      className={`${montserrat.className} text-lg text-gray-600 dark:text-gray-300 max-w-md`}
                     >
                       Your questions matter to us. Our team is ready to provide
                       guidance and support on your spiritual journey.

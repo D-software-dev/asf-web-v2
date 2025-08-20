@@ -38,7 +38,7 @@ const FAQ = () => {
   const [openId, setOpenId] = useState<number | null>(null);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-white via-gray-50/50 to-white">
+    <section className="py-24 bg-gradient-to-br from-white dark:from-black via-gray-50/50 dark:via-[#171f18] to-white dark:to-[#333]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ const FAQ = () => {
             Frequently Asked Questions
           </h2>
           <p
-            className={`${montserrat.className} text-gray-600 max-w-2xl mx-auto text-lg`}
+            className={`${montserrat.className} text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg`}
           >
             Find answers to common questions about ASF UniPort and how you can
             be part of our community.
@@ -72,8 +72,8 @@ const FAQ = () => {
             >
               <div className="relative">
                 <motion.div
-                  className={`bg-white rounded-2xl shadow-sm hover:shadow-md 
-                    transition-all duration-300 border border-gray-100
+                  className={`bg-white dark:bg-[#1f221f] rounded-2xl shadow-sm hover:shadow-md 
+                    transition-all duration-300 border border-gray-100 dark:border-[#395839]
                     ${openId === faq.id ? "shadow-md border-primary/20" : ""}`}
                 >
                   {/* Question Header */}
@@ -94,7 +94,7 @@ const FAQ = () => {
                       {/* Question */}
                       <h3
                         className={`${righteous.className} text-xl sm:text-2xl font-semibold 
-                        text-gray-900 group-hover:text-primary transition-colors duration-300`}
+                        text-gray-900 dark:text-gray-400 group-hover:text-primary transition-colors duration-300`}
                       >
                         {faq.question}
                       </h3>
@@ -129,9 +129,9 @@ const FAQ = () => {
                         className="overflow-hidden"
                       >
                         <div className="px-6 pb-6 sm:px-6 sm:pb-6">
-                          <div className="h-px bg-gray-200 mb-6" />
+                          <div className="h-px bg-gray-200 dark:bg-primary/50 mb-6" />
                           <p
-                            className={`${montserrat.className} text-gray-600 text-lg leading-relaxed`}
+                            className={`${montserrat.className} text-gray-600 dark:text-gray-400 text-lg leading-relaxed`}
                           >
                             {faq.answer}
                           </p>
